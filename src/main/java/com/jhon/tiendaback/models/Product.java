@@ -36,7 +36,7 @@ public class Product {
     @ManyToOne
     private Category category;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(fetch=FetchType.LAZY, mappedBy = "product", cascade = CascadeType.ALL)
     private List<OrderDetail> orderDetails;
 
 
